@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8f9fa; 
+  color: #343a40; 
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto; 
+  padding: 0 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar h1 {
+  font-size: 24px;
+  color: #4a00e0; 
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links span {
+  font-weight: 500;
+  color: #495057;
+}
+
+.nav-links button {
+  padding: 8px 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-links button:hover {
+  background-color: #c82333;
+}
+
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-card h2 {
+  margin-bottom: 10px;
+}
+
+.auth-card .auth-subheading {
+  margin-bottom: 30px;
+  color: #6c757d;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-card input {
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.auth-card button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-card .auth-switch {
+  margin-top: 25px;
+}
+
+.form-container {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  margin-bottom: 50px;
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container input[type="text"],
+.form-container textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.form-container textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-container input[type="text"]:focus,
+.form-container textarea:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.form-container form button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-container form button[type="submit"] {
+  background-color: #28a745;
+}
+.form-container form button[type="submit"]:hover {
+  background-color: #218838;
+}
+.form-container form button[type="button"] {
+  background-color: #6c757d;
+}
+.form-container form button[type="button"]:hover {
+  background-color: #5a6268;
+}
+
+.posts-container h2 {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.post {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  margin-bottom: 25px;
+  position: relative; 
+}
+
+.post h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.post .author {
+  font-size: 14px;
+  font-style: italic;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+.post p {
+  line-height: 1.6;
+}
+
+.post-actions {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  gap: 10px;
+}
+
+.post-actions button {
+  padding: 6px 12px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.post-actions button:first-of-type { 
+  background-color: #ffc107;
+  color: #212529;
+}
+.post-actions button:first-of-type:hover {
+  background-color: #e0a800;
+}
+.post-actions .delete-btn { 
+  background-color: #dc3545;
+}
+.post-actions .delete-btn:hover {
+  background-color: #c82333;
+}
+
+.form-success-message {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.form-error-message {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.post p {
+  line-height: 1.6;
+  white-space: pre-wrap; 
+}
