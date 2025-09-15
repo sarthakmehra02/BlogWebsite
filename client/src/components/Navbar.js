@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import ThemeSwitcher from './ThemeSwitcher'; // <-- IMPORTED
 
 const Navbar = ({ user, setUser }) => {
   const navigate = useNavigate();
@@ -8,13 +9,14 @@ const Navbar = ({ user, setUser }) => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     setUser(null);
-    navigate('/login');
+    navigate('/');
   };
 
   return (
     <nav className="navbar">
-      <Link to="/"><h1>My Blog</h1></Link>
+      <h1><Link to="/">My Blog</Link></h1>
       <div className="nav-links">
+        <ThemeSwitcher /> {/* <-- ADDED */}
         {user ? (
           <>
             <span>Welcome, {user.username}</span>

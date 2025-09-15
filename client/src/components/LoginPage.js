@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import API from '../api/index';
 import { useNavigate, Link } from 'react-router-dom';
 
 const LoginPage = ({ setUser }) => {
@@ -10,8 +10,9 @@ const LoginPage = ({ setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/login`, { username, password });
-
+      // THE FIX IS HERE: Use the full path '/api/auth/login'
+      const response = await API.post('/api/auth/login', { username, password });
+      
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
       setUser(response.data.user);
@@ -32,15 +33,12 @@ const LoginPage = ({ setUser }) => {
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <button type="submit">Login</button>
         </form>
-
-        {}
         <p className="auth-switch">
           Don't have an account? <Link to="/register">Register</Link>
         </p>
         <p className="auth-switch" style={{ marginTop: '10px' }}>
           <Link to="/forgot-password">Forgot Password?</Link>
         </p>
-        
       </div>
     </div>
   );
